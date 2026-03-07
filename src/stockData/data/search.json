@@ -1,0 +1,225 @@
+{
+  "explains": [],
+  "count": 11,
+  "quotes": [
+    {
+      "exchange": "NYQ",
+      "shortname": "Reliance, Inc.",
+      "quoteType": "EQUITY",
+      "symbol": "RS",
+      "index": "quotes",
+      "score": 20042,
+      "typeDisp": "equity",
+      "longname": "Reliance, Inc.",
+      "exchDisp": "NYSE",
+      "sector": "Basic Materials",
+      "sectorDisp": "Basic Materials",
+      "industry": "Steel",
+      "industryDisp": "Steel",
+      "dispSecIndFlag": true,
+      "isYahooFinance": true,
+      "prevName": "Reliance Steel & Aluminum Co.",
+      "nameChangeDate": "2026-03-07T00:00:00.000Z"
+    },
+    {
+      "exchange": "NSI",
+      "shortname": "RELIANCE INDUSTRIES LTD",
+      "quoteType": "EQUITY",
+      "symbol": "RELIANCE.NS",
+      "index": "quotes",
+      "score": 20008,
+      "typeDisp": "equity",
+      "longname": "Reliance Industries Limited",
+      "exchDisp": "NSE",
+      "sector": "Energy",
+      "sectorDisp": "Energy",
+      "industry": "Oil & Gas Refining & Marketing",
+      "industryDisp": "Oil & Gas Refining & Marketing",
+      "isYahooFinance": true
+    },
+    {
+      "exchange": "NSI",
+      "shortname": "RELIANCE COMMUNICATIONS L",
+      "quoteType": "EQUITY",
+      "symbol": "RCOM.NS",
+      "index": "quotes",
+      "score": 20006,
+      "typeDisp": "equity",
+      "longname": "Reliance Communications Limited",
+      "exchDisp": "NSE",
+      "sector": "Communication Services",
+      "sectorDisp": "Communication Services",
+      "industry": "Telecom Services",
+      "industryDisp": "Telecom Services",
+      "isYahooFinance": true
+    },
+    {
+      "exchange": "BSE",
+      "shortname": "RELIANCE INFRASTRUCTURE LTD.",
+      "quoteType": "EQUITY",
+      "symbol": "RELINFRA.BO",
+      "index": "quotes",
+      "score": 20005,
+      "typeDisp": "equity",
+      "longname": "Reliance Infrastructure Limited",
+      "exchDisp": "Bombay",
+      "sector": "Utilities",
+      "sectorDisp": "Utilities",
+      "industry": "Utilities—Independent Power Producers",
+      "industryDisp": "Utilities—Independent Power Producers",
+      "isYahooFinance": true
+    },
+    {
+      "exchange": "ASX",
+      "shortname": "RWC CORP FPO [RWC]",
+      "quoteType": "EQUITY",
+      "symbol": "RWC.AX",
+      "index": "quotes",
+      "score": 20003,
+      "typeDisp": "equity",
+      "longname": "Reliance Worldwide Corporation Limited",
+      "exchDisp": "Australian",
+      "sector": "Industrials",
+      "sectorDisp": "Industrials",
+      "industry": "Building Products & Equipment",
+      "industryDisp": "Building Products & Equipment",
+      "isYahooFinance": true
+    },
+    {
+      "index": "1383dbc091202d6730a8a7c652bfa95b",
+      "name": "Reliance Jio",
+      "permalink": "reliance-jio-infocomm-ltd-234",
+      "isYahooFinance": false
+    },
+    {
+      "index": "a0bd736685cb41f091c5387e963972bf",
+      "name": "Reliance Health",
+      "permalink": "reliancehealth",
+      "isYahooFinance": false
+    }
+  ],
+  "news": [
+    {
+      "uuid": "c8f172cd-f955-3730-9dcb-a3f3ac3b113f",
+      "title": "Reliance Industries Pivots Back to Russian Oil with U.S. Waiver",
+      "publisher": "Oilprice.com",
+      "link": "https://finance.yahoo.com/news/reliance-industries-pivots-back-russian-173000148.html",
+      "providerPublishTime": "2026-03-06T17:30:00.000Z",
+      "type": "STORY",
+      "thumbnail": {
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/INQaQA4P4K83B4rNNoYSRA--~B/aD0zMDA7dz03MTg7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/oilprice.com/02a28e97c6f547f9b5da279dbbdf5b6c",
+            "width": 718,
+            "height": 300,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/mRNNmAx4Y1LrE5PLruBcAg--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/oilprice.com/02a28e97c6f547f9b5da279dbbdf5b6c",
+            "width": 140,
+            "height": 140,
+            "tag": "140x140"
+          }
+        ]
+      },
+      "relatedTickers": [
+        "CL=F",
+        "RELIANCE.NS"
+      ]
+    },
+    {
+      "uuid": "a9c4d018-b810-36a6-973c-25fda195b787",
+      "title": "Virtual Power Plants Are Key to Unlocking America's Energy Transition",
+      "publisher": "Oilprice.com",
+      "link": "https://finance.yahoo.com/news/virtual-power-plants-key-unlocking-180000751.html",
+      "providerPublishTime": "2026-03-07T18:00:00.000Z",
+      "type": "STORY",
+      "thumbnail": {
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/smQLDX3nU_HJIrIQX8TVNQ--~B/aD0zMDA7dz03MTg7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/oilprice.com/02539a46cb625525e94a29ab600ed4f8",
+            "width": 718,
+            "height": 300,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/raLszl6sbZ_qzgAjzORbvA--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/oilprice.com/02539a46cb625525e94a29ab600ed4f8",
+            "width": 140,
+            "height": 140,
+            "tag": "140x140"
+          }
+        ]
+      }
+    },
+    {
+      "uuid": "b1f36d10-822d-3d65-ab02-426ed631813f",
+      "title": "Reliance Global Group Schedules Fourth Quarter 2025 Financial Results and Business Update Conference Call",
+      "publisher": "GlobeNewswire",
+      "link": "https://finance.yahoo.com/news/reliance-global-group-schedules-fourth-133000053.html",
+      "providerPublishTime": "2026-03-06T13:30:00.000Z",
+      "type": "STORY",
+      "thumbnail": {
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/IPoRu._exREoeenu2XGokg--~B/aD00MDA7dz0xODI3O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/globenewswire.com/7c92e314831579861a8e4eb1db027246",
+            "width": 1827,
+            "height": 400,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/5kXnazv0yUH9eMTbKneDAQ--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/globenewswire.com/7c92e314831579861a8e4eb1db027246",
+            "width": 140,
+            "height": 140,
+            "tag": "140x140"
+          }
+        ]
+      },
+      "relatedTickers": [
+        "EZRA"
+      ]
+    },
+    {
+      "uuid": "3428c557-716d-3d58-b945-11aa92d3e17e",
+      "title": "Is It Time To Reassess Renesas Electronics (TSE:6723) After Recent Share Price Volatility",
+      "publisher": "Simply Wall St.",
+      "link": "https://finance.yahoo.com/news/time-reassess-renesas-electronics-tse-180837513.html",
+      "providerPublishTime": "2026-03-07T18:08:37.000Z",
+      "type": "STORY",
+      "thumbnail": {
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/AkhBH_k5gBqIX8a81ksk_Q--~B/aD00MzI7dz0xMTk0O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/simply_wall_st__316/1d618ff9ab875bb9b8cc70f749d1f2d0",
+            "width": 1194,
+            "height": 432,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/toTd2VL4qwAkbmn8sXGVBw--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/simply_wall_st__316/1d618ff9ab875bb9b8cc70f749d1f2d0",
+            "width": 140,
+            "height": 140,
+            "tag": "140x140"
+          }
+        ]
+      },
+      "relatedTickers": [
+        "6723",
+        "6723.T"
+      ]
+    }
+  ],
+  "nav": [],
+  "lists": [],
+  "researchReports": [],
+  "screenerFieldResults": [],
+  "totalTime": 103,
+  "timeTakenForQuotes": 440,
+  "timeTakenForNews": 900,
+  "timeTakenForAlgowatchlist": 400,
+  "timeTakenForPredefinedScreener": 400,
+  "timeTakenForCrunchbase": 400,
+  "timeTakenForNav": 400,
+  "timeTakenForResearchReports": 0,
+  "timeTakenForScreenerField": 0,
+  "timeTakenForCulturalAssets": 0,
+  "timeTakenForSearchLists": 0
+}

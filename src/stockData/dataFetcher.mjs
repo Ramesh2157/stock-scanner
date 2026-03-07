@@ -123,9 +123,144 @@ export  async function getStockDetails(symbol) {
   }
 }
 
+export  async function allData(symbol) {
+  try {
+    const quoteCombineData = await yahooFinance.quoteCombine(symbol);
+    // const autocData = await yahooFinance.autoc(symbol);
+    // const chartData = await yahooFinance.chart(symbol);
+    // const dailyGainersData = await yahooFinance.dailyGainers(symbol);
+    // const dailyLosersData = await yahooFinance.dailyLosers(symbol);
+    const fundamentalsTimeSeriesData = await yahooFinance.fundamentalsTimeSeries(symbol);
+    const historicalData = await yahooFinance.historical(symbol);
+    const insightsData = await yahooFinance.insights(symbol);
+    const optionsData = await yahooFinance.options(symbol);
+    const quoteData = await yahooFinance.quote(symbol);
+    const quoteSummaryData = await yahooFinance.quoteSummary(symbol);
+    const recommendationsBySymbolData = await yahooFinance.recommendationsBySymbol(symbol);
+    const screenerData = await yahooFinance.screener(symbol);
+    const searchData = await yahooFinance.search(symbol);
+    const trendingSymbolsData = await yahooFinance.trendingSymbols(symbol);
+
+    return{
+      quoteCombineData,
+      // autocData,
+      // chartData,
+      // dailyGainersData,
+      // dailyLosersData,
+      fundamentalsTimeSeriesData,
+      historicalData,
+      insightsData,
+      optionsData,
+      quoteData,
+      quoteSummaryData,
+      recommendationsBySymbolData,
+      screenerData,
+      searchData,
+      trendingSymbolsData,
+    }
+  }
+   catch (error) {
+    console.log(error);
+    
+    console.error("Error fetching stock:", error.message);
+  }
+}
+
 // Example
 const symbol = "RELIANCE.NS"; // NSE format
-const data = await getStockDetails(symbol);
-const fetchFundamental = await fetchFundamentals(symbol);
+// const data = await allData(symbol);
 
-console.log(data, fetchFundamental);
+// console.log(data);
+import fs from "fs";
+
+async function inspectYahoo() {
+
+  const functions = {
+
+    quote: () => yahooFinance.quote(symbol),
+
+    quoteSummary: () =>
+      yahooFinance.quoteSummary(symbol, {
+        modules: [
+          "price",
+          "summaryDetail",
+          "financialData",
+          "defaultKeyStatistics",
+          "assetProfile"
+        ]
+      }),
+
+    historical: () =>
+      yahooFinance.historical(symbol, {
+        period1: "2024-01-01",
+        interval: "1d"
+      }),
+
+    chart: () =>
+      yahooFinance.chart(symbol, {
+        interval: "1d",
+        range: "1mo"
+      }),
+
+    options: () =>
+      yahooFinance.options(symbol),
+
+    insights: () =>
+      yahooFinance.insights(symbol),
+
+    recommendationsBySymbol: () =>
+      yahooFinance.recommendationsBySymbol(symbol),
+
+    fundamentalsTimeSeries: () =>
+      yahooFinance.fundamentalsTimeSeries(symbol, {
+        type: "annualTotalRevenue"
+      }),
+
+    search: () =>
+      yahooFinance.search("RELIANCE"),
+
+    trendingSymbols: () =>
+      yahooFinance.trendingSymbols("IN"),
+
+    quoteCombine: () =>
+      yahooFinance.quoteCombine(symbol)
+
+  };
+
+  // create folder for outputs
+  if (!fs.existsSync("./data")) {
+    fs.mkdirSync("./data");
+  }
+
+  for (const [name, fn] of Object.entries(functions)) {
+
+    try {
+
+      console.log("\n==============================");
+      console.log("FUNCTION:", name);
+      console.log("==============================");
+
+      const data = await fn();
+
+      // print in console
+      console.dir(data, { depth: 4 });
+
+      // save JSON file
+      fs.writeFileSync(
+        `./data/${name}.json`,
+        JSON.stringify(data, null, 2)
+      );
+
+      console.log(`Saved: data/${name}.json`);
+
+    } catch (err) {
+
+      console.log(`Error in ${name}:`, err.message);
+
+    }
+
+  }
+
+}
+
+inspectYahoo();
