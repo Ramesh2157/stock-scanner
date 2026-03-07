@@ -3,7 +3,7 @@
 // ══════════════════════════════════════════════════════════════════════════════
 // const CONFIG = {
 
-import { CONFIG } from "./config.mjs";
+import { CONFIG } from "../../config.mjs";
 import https from "https";
  
 //  TELEGRAM: {

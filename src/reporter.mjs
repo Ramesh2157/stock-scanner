@@ -5,7 +5,7 @@
  * Also prints a mini ASCII equity curve and trade log.
  */
 
-import { calcMetrics } from './metrics.mjs';
+import { calcMetrics } from './calculations/metrics.mjs';
 
 const SEP  = '─'.repeat(60);
 const SEP2 = '═'.repeat(60);
@@ -14,7 +14,7 @@ const SEP2 = '═'.repeat(60);
  * Print the full performance report for one symbol.
  *
  * @param {string} symbol
- * @param {import('./backtester.mjs').BacktestResult} result
+ * @param {import('./calculations/backtester.mjs').BacktestResult} result
  */
 export function printReport(symbol, result) {
   const { trades, equityCurve, initialCapital } = result;

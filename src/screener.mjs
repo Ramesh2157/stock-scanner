@@ -13,7 +13,7 @@
  */
 
 import { buildAlignedSMA } from './indicators.mjs';
-import { CONFIG }          from './config.mjs';
+import { CONFIG }          from '../config.mjs';
 
 /**
  * Run the screener over the full OHLCV dataset.

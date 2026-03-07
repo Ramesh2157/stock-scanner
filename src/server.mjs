@@ -48,20 +48,19 @@ app.get("/api/nifty500", async (req, res) => {
  const symbolsMany = [];
    for (const stock of stocks) {
      try {
- symbolsMany.push({
-    stock_name : stock.meta.companyName,
-    symbol_name : stock.meta.symbol,
-    segment : stock.meta.segment,
-    exchange_type : "NSE",
-    industry_sector : stock.meta.industry
- })
+      symbolsMany.push({
+          stock_name : stock.meta.companyName,
+          symbol_name : stock.meta.symbol,
+          segment : stock.meta.segment,
+          exchange_type : "NSE",
+          industry_sector : stock.meta.industry
+      })
        } catch (err) {
        console.error(`  ✗ Error fetch ${stock}: ${err.message}`);
        
      }
    }
  
- console.log(symbolsMany);
       // const symbols = {
       //   stock_name: "trial",
       //   exchange_type: "NSE",
@@ -82,7 +81,7 @@ app.get("/api/nifty500", async (req, res) => {
     //     symbol_name: "test",
     //   }];
       // await insertOne("stock_symbols",symbols);
-      await insertMany("stock_symbols",symbolsMany[0]);
+      await insertMany("stock_symbols",symbolsMany);
       return res.json({
       success: true,
       count: symbols.length,

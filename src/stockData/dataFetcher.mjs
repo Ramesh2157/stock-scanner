@@ -19,7 +19,6 @@
 
 
 import YahooFinance from "yahoo-finance2";
-import https from "https";
 
 // const yahooFinance = new YahooFinance();
 // v3 breaking change: must instantiate before calling any method
@@ -90,6 +89,7 @@ export async function fetchFundamentals(symbol) {
     });
     const price = summary?.price ?? {};
     return {
+      summary,
       marketCap: price.marketCap ?? null,   // absolute INR for .NS symbols
       name      : price.longName ?? price.shortName ?? symbol,
     };
@@ -97,3 +97,35 @@ export async function fetchFundamentals(symbol) {
     return { marketCap: null, name: symbol };
   }
 }
+
+export  async function getStockDetails(symbol) {
+  try {
+    const quote = await yahooFinance.quote(symbol);
+
+    const result = {
+      symbol: quote.symbol,
+      name: quote.longName,
+      currentPrice: quote.regularMarketPrice,
+      open: quote.regularMarketOpen,
+      high: quote.regularMarketDayHigh,
+      low: quote.regularMarketDayLow,
+      volume: quote.regularMarketVolume,
+      marketCap: quote.marketCap,
+      peRatio: quote.trailingPE,
+      sector: quote.sector,
+      exchange: quote.fullExchangeName
+    };
+
+    return result;
+
+  } catch (error) {
+    console.error("Error fetching stock:", error.message);
+  }
+}
+
+// Example
+const symbol = "RELIANCE.NS"; // NSE format
+const data = await getStockDetails(symbol);
+const fetchFundamental = await fetchFundamentals(symbol);
+
+console.log(data, fetchFundamental);

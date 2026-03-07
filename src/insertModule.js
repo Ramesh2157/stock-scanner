@@ -1,4 +1,4 @@
-import supabase from "./supaBaseClient.js";
+import supabase from "./database/supaBaseClient.js";
 
 /**
  * Insert a single record into a table.

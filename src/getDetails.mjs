@@ -5,7 +5,6 @@ const yahooFinance = new YahooFinance();
 export  async function getStockDetails(symbol) {
   try {
     const quote = await yahooFinance.quote(symbol);
-console.log(quote);
 
     const result = {
       symbol: quote.symbol,

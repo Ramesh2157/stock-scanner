@@ -21,7 +21,7 @@
  */
 
 import { buildAlignedSMA } from './indicators.mjs';
-import { CONFIG }           from './config.mjs';
+import { CONFIG }           from '../config.mjs';
 
 // How close (%) the low must come to the SMA to count as "touching support"
 const SMA_PROXIMITY_PCT = 0.015;   // within 1.5% of SMA = near support

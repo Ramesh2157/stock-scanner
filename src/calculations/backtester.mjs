@@ -11,7 +11,7 @@
  * Returns a BacktestResult object consumed by reporter.mjs.
  */
 
-import { CONFIG } from './config.mjs';
+import { CONFIG } from '../../config.mjs';
 
 // ── Types (JSDoc) ─────────────────────────────────────────────
 /**
