@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxKc7cfaYhCbdJ29lYl_NUaCng0Qu0uVeA6TodV3MIX6IS3kZuuTmOOwNFrmTJ257ph/exec";
+const WEBHOOK_URL = "https://script.google.com/macros/library/d/1SNaAO2X386QK-DxpQSxOvKdy6dXK6WcZQfDFomOBQQkK8mpaPi6JjbZm/5";
 // Deployment ID="AKfycbxvH7O3d3QAuL6mAo0-iY5aJDalNG_qjMigli2Ww5CjTAy1kdqTjrniDbB7Rlbv-Cu-"
 
 // const screenerResults = [
