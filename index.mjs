@@ -21,6 +21,10 @@ import fs                                from "fs";
 import { pushStockDetails }              from "./src/googleSheet/push.mjs";
 import { sendTelegramMessage }           from "./src/Alerts/telegramAlert.mjs";
 import { insertMany, insertOne }         from "./src/insertModule.js";
+import { getAllStockList } from "./src/Services/stockSymbols.mjs";
+import { storeCandles } from "./src/Services/candleHistory.js";
+import { storeFilterStocks } from "./src/Services/filterStocks.js";
+import { storeBackTestData } from "./src/Services/backtestData.js";
 
 // const SYMBOLS_LIST = JSON.parse(fs.readFileSync("./assests/nifty500.json", "utf-8"));
 // const SYMBOLS_LIST = JSON.parse(fs.readFileSync("./assests/allstock.json", "utf-8"));
@@ -39,9 +43,10 @@ async function main() {
   console.log(`  Delay   : ${CONFIG.DELAY_BETWEEN_SYMBOLS_MS / 1000}s between symbols (rate-limit guard)`);
   console.log("═".repeat(60) + "\n");
 
-
+  const allStockList = await getAllStockList()
   // ── Summary table for live signals (printed at end) ─────────
   const liveTable = [];
+  let backTestData = [];
 
   for (let i = 0; i < SYMBOLS.symbolsNS.length; i++) {
     const symbol = SYMBOLS.symbolsNS[i];
@@ -69,9 +74,11 @@ async function main() {
         continue;
       }
 
+      const symbolRow = allStockList.find((s)=>s.symbolNS === symbol)
+
+      await storeCandles(symbolRow,ohlcv)
       // 3. Entry signal found — fetch details and run full analysis
       console.log(`\n▶ [${i + 1}/${SYMBOLS.symbolsNS.length}] Processing: ${symbol}`);
-
       if (!ohlcv || ohlcv.length < CONFIG.SMA_PERIOD + 60) {
         console.warn(`  ⚠  Insufficient data for ${symbol} — skipping.`);
         continue;
@@ -92,11 +99,25 @@ async function main() {
       // 6. Performance report
       printReport(symbol, result);
 
+      const backTestDataTrade =  result.trades.map(t => ({
+        symbol_id:symbolRow.id,
+        entry_date: t.entryDate.toISOString().split("T")[0],
+        exit_date: t.exitDate.toISOString().split("T")[0],
+        entry_price :t.entryPrice.toFixed(2),
+        exit_price: t.exitPrice.toFixed(2),
+        return : (t.returnPct * 100).toFixed(2) + '%',
+        exit:t.exitReason
+      }));
+
+      backTestData = [...backTestData,...backTestDataTrade]
+
       // 7. Live next-entry signal
       printLiveSignal(symbol, liveSignal);
 
       // 8. Collect for final summary table
+
       liveTable.push({
+        symbolRow,
         symbol,
         name          : details.name,
         trade         : liveSignal.trade,
@@ -114,6 +135,10 @@ async function main() {
     }
   }
 
+  // ── Final back test data table ─────────────────────────
+  if (backTestData.length > 0) {
+    await storeBackTestData(backTestData)
+  }
   // ── Final live-signal summary table ─────────────────────────
   if (liveTable.length > 0) {
     console.log("\n" + "═".repeat(60));
@@ -132,7 +157,7 @@ async function main() {
 
     let screenerResults = [];
 
-    for (const row of liveTable) {
+    for (const row of liveTable) {      
       const badge =
         {
           ENTRY_NOW    : "🟢 ENTRY NOW  ",
@@ -155,6 +180,7 @@ async function main() {
       const stock = {
         name          : row.name,
         symbol        : row.symbol,
+        symbol_id     : row.symbolRow.id,
         status        : badge,
         open          : row.open          ?? "-",
         close         : row.close         ?? "-",
@@ -168,8 +194,9 @@ async function main() {
       screenerResults.push(stock);
       sendTelegramMessage(stock)
     }
-
-    pushStockDetails(screenerResults)
+    await storeFilterStocks(screenerResults)
+    
+    await pushStockDetails(screenerResults)
 
     console.log("═".repeat(60));
   }

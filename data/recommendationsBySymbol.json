@@ -1,0 +1,25 @@
+{
+  "symbol": "RELIANCE.NS",
+  "recommendedSymbols": [
+    {
+      "symbol": "TCS.NS",
+      "score": 0.214718
+    },
+    {
+      "symbol": "HDFCBANK.NS",
+      "score": 0.213473
+    },
+    {
+      "symbol": "ICICIBANK.NS",
+      "score": 0.204461
+    },
+    {
+      "symbol": "SBIN.NS",
+      "score": 0.201213
+    },
+    {
+      "symbol": "LT.NS",
+      "score": 0.191307
+    }
+  ]
+}

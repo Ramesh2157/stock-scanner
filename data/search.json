@@ -1,0 +1,230 @@
+{
+  "explains": [],
+  "count": 11,
+  "quotes": [
+    {
+      "exchange": "NYQ",
+      "shortname": "Reliance, Inc.",
+      "quoteType": "EQUITY",
+      "symbol": "RS",
+      "index": "quotes",
+      "score": 20034,
+      "typeDisp": "equity",
+      "longname": "Reliance, Inc.",
+      "exchDisp": "NYSE",
+      "sector": "Basic Materials",
+      "sectorDisp": "Basic Materials",
+      "industry": "Steel",
+      "industryDisp": "Steel",
+      "dispSecIndFlag": true,
+      "isYahooFinance": true,
+      "prevName": "Reliance Steel & Aluminum Co.",
+      "nameChangeDate": "2026-03-07T00:00:00.000Z"
+    },
+    {
+      "exchange": "NSI",
+      "shortname": "RELIANCE INDUSTRIES LTD",
+      "quoteType": "EQUITY",
+      "symbol": "RELIANCE.NS",
+      "index": "quotes",
+      "score": 20009,
+      "typeDisp": "equity",
+      "longname": "Reliance Industries Limited",
+      "exchDisp": "NSE",
+      "sector": "Energy",
+      "sectorDisp": "Energy",
+      "industry": "Oil & Gas Refining & Marketing",
+      "industryDisp": "Oil & Gas Refining & Marketing",
+      "isYahooFinance": true
+    },
+    {
+      "exchange": "NSI",
+      "shortname": "RELIANCE COMMUNICATIONS L",
+      "quoteType": "EQUITY",
+      "symbol": "RCOM.NS",
+      "index": "quotes",
+      "score": 20006,
+      "typeDisp": "equity",
+      "longname": "Reliance Communications Limited",
+      "exchDisp": "NSE",
+      "sector": "Communication Services",
+      "sectorDisp": "Communication Services",
+      "industry": "Telecom Services",
+      "industryDisp": "Telecom Services",
+      "isYahooFinance": true
+    },
+    {
+      "exchange": "BSE",
+      "shortname": "RELIANCE INFRASTRUCTURE LTD.",
+      "quoteType": "EQUITY",
+      "symbol": "RELINFRA.BO",
+      "index": "quotes",
+      "score": 20004,
+      "typeDisp": "equity",
+      "longname": "Reliance Infrastructure Limited",
+      "exchDisp": "Bombay",
+      "sector": "Utilities",
+      "sectorDisp": "Utilities",
+      "industry": "Utilities—Independent Power Producers",
+      "industryDisp": "Utilities—Independent Power Producers",
+      "isYahooFinance": true
+    },
+    {
+      "exchange": "ASX",
+      "shortname": "RWC CORP FPO [RWC]",
+      "quoteType": "EQUITY",
+      "symbol": "RWC.AX",
+      "index": "quotes",
+      "score": 20003,
+      "typeDisp": "equity",
+      "longname": "Reliance Worldwide Corporation Limited",
+      "exchDisp": "Australian",
+      "sector": "Industrials",
+      "sectorDisp": "Industrials",
+      "industry": "Building Products & Equipment",
+      "industryDisp": "Building Products & Equipment",
+      "isYahooFinance": true
+    },
+    {
+      "index": "1383dbc091202d6730a8a7c652bfa95b",
+      "name": "Reliance Jio",
+      "permalink": "reliance-jio-infocomm-ltd-234",
+      "isYahooFinance": false
+    },
+    {
+      "index": "a0bd736685cb41f091c5387e963972bf",
+      "name": "Reliance Health",
+      "permalink": "reliancehealth",
+      "isYahooFinance": false
+    }
+  ],
+  "news": [
+    {
+      "uuid": "c8f172cd-f955-3730-9dcb-a3f3ac3b113f",
+      "title": "Reliance Industries Pivots Back to Russian Oil with U.S. Waiver",
+      "publisher": "Oilprice.com",
+      "link": "https://finance.yahoo.com/news/reliance-industries-pivots-back-russian-173000148.html",
+      "providerPublishTime": "2026-03-06T17:30:00.000Z",
+      "type": "STORY",
+      "thumbnail": {
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/INQaQA4P4K83B4rNNoYSRA--~B/aD0zMDA7dz03MTg7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/oilprice.com/02a28e97c6f547f9b5da279dbbdf5b6c",
+            "width": 718,
+            "height": 300,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/mRNNmAx4Y1LrE5PLruBcAg--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/oilprice.com/02a28e97c6f547f9b5da279dbbdf5b6c",
+            "width": 140,
+            "height": 140,
+            "tag": "140x140"
+          }
+        ]
+      },
+      "relatedTickers": [
+        "CL=F",
+        "RELIANCE.NS"
+      ]
+    },
+    {
+      "uuid": "47946df1-bcc7-3738-a2d1-599ba9dde911",
+      "title": "Oracle AI Data Center Pullback Tests Spending Discipline And Partner Reliance",
+      "publisher": "Simply Wall St.",
+      "link": "https://finance.yahoo.com/news/oracle-ai-data-center-pullback-010458964.html",
+      "providerPublishTime": "2026-03-08T01:04:58.000Z",
+      "type": "STORY",
+      "thumbnail": {
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/h5Sl8vD9y_csxX46X7BeKw--~B/aD00MzI7dz0xMTk0O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/simply_wall_st__316/10232bfeaa28288a2e6f936e1c871a73",
+            "width": 1194,
+            "height": 432,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/4keDJW8tktSPYmUwmq.qZA--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/simply_wall_st__316/10232bfeaa28288a2e6f936e1c871a73",
+            "width": 140,
+            "height": 140,
+            "tag": "140x140"
+          }
+        ]
+      },
+      "relatedTickers": [
+        "ORCL",
+        "NVDA",
+        "META"
+      ]
+    },
+    {
+      "uuid": "61ca8dcf-0112-301d-9b4c-c225e7ffd7d3",
+      "title": "The Bull Case For Nextpower (NXT) Could Change Following Its Push For Higher ROIC In Utility-Scale Solar",
+      "publisher": "Simply Wall St.",
+      "link": "https://finance.yahoo.com/news/bull-case-nextpower-nxt-could-050931809.html",
+      "providerPublishTime": "2026-03-08T05:09:31.000Z",
+      "type": "STORY",
+      "thumbnail": {
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/Nfz5wAhClXK3VMdDWSwWPw--~B/aD00MzI7dz0xMTk0O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/simply_wall_st__316/8e5b7feff946a5236949391477b36a92",
+            "width": 1194,
+            "height": 432,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/OCHlmx3TekrGqIBdqK7QtA--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/simply_wall_st__316/8e5b7feff946a5236949391477b36a92",
+            "width": 140,
+            "height": 140,
+            "tag": "140x140"
+          }
+        ]
+      },
+      "relatedTickers": [
+        "NXT"
+      ]
+    },
+    {
+      "uuid": "364d780b-dc43-3395-aed7-2b0d4a1de3b6",
+      "title": "Carnival Marks Grand Turk Milestone As Long Term Port Story Evolves",
+      "publisher": "Simply Wall St.",
+      "link": "https://finance.yahoo.com/news/carnival-marks-grand-turk-milestone-051005452.html",
+      "providerPublishTime": "2026-03-08T05:10:05.000Z",
+      "type": "STORY",
+      "thumbnail": {
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/Q7Xnl1gEohQnpcIOzqEAFQ--~B/aD00MzI7dz0xMTk0O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/simply_wall_st__316/32b2264889e9375193adba765d83b8cf",
+            "width": 1194,
+            "height": 432,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/TwNPsG58BPuE0icHursLbw--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/simply_wall_st__316/32b2264889e9375193adba765d83b8cf",
+            "width": 140,
+            "height": 140,
+            "tag": "140x140"
+          }
+        ]
+      },
+      "relatedTickers": [
+        "CCL",
+        "CUK"
+      ]
+    }
+  ],
+  "nav": [],
+  "lists": [],
+  "researchReports": [],
+  "screenerFieldResults": [],
+  "totalTime": 53,
+  "timeTakenForQuotes": 440,
+  "timeTakenForNews": 900,
+  "timeTakenForAlgowatchlist": 400,
+  "timeTakenForPredefinedScreener": 400,
+  "timeTakenForCrunchbase": 400,
+  "timeTakenForNav": 400,
+  "timeTakenForResearchReports": 0,
+  "timeTakenForScreenerField": 0,
+  "timeTakenForCulturalAssets": 0,
+  "timeTakenForSearchLists": 0
+}

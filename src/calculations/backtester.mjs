@@ -73,17 +73,17 @@ export function runBacktest(ohlcv, signals) {
       // Stop loss hit (use low of the bar as proxy for intra-day touch)
       if (bar.low <= stopLevel) {
         exitPrice  = stopLevel;   // assume execution at stop level
-        exitReason = 'STOP';
+        exitReason = 'Stop loss hit';
       }
       // Target hit
       else if (bar.high >= targetLevel) {
         exitPrice  = targetLevel;
-        exitReason = 'TARGET';
+        exitReason = 'Target hit';
       }
       // Time-based exit (after TIME_EXIT_DAYS bars have elapsed)
       else if (barsHeld >= TIME_EXIT_DAYS) {
         exitPrice  = bar.close;
-        exitReason = 'TIME';
+        exitReason = `${TIME_EXIT_DAYS} after exit.`;
       }
 
       if (exitPrice !== null) {
@@ -133,7 +133,7 @@ export function runBacktest(ohlcv, signals) {
       entryPrice,
       exitDate   : lastBar.date,
       exitPrice  : lastBar.close,
-      exitReason : 'EOD',     // End of data
+      exitReason : 'End of data',     // End of data
       returnPct,
       pnl,
     });
