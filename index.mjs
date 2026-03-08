@@ -43,7 +43,7 @@ async function main() {
   console.log(`  Delay   : ${CONFIG.DELAY_BETWEEN_SYMBOLS_MS / 1000}s between symbols (rate-limit guard)`);
   console.log("═".repeat(60) + "\n");
 
-  const allStockList = await getAllStockList()
+  const SYMBOLS = await getAllStockList()
   // ── Summary table for live signals (printed at end) ─────────
   const liveTable = [];
   let backTestData = [];
@@ -53,13 +53,13 @@ async function main() {
 
     // ── Polite gap between symbols to avoid 429 bursts ────────
     // Skip delay for the very first symbol
-    if (i > 0) {
-      process.stdout.write(
-        `  ⏳ Waiting ${CONFIG.DELAY_BETWEEN_SYMBOLS_MS / 1000}s before next symbol...\r`
-      );
-      await sleep(CONFIG.DELAY_BETWEEN_SYMBOLS_MS);
-      process.stdout.write(" ".repeat(55) + "\r"); // clear the line
-    }
+    // if (i > 0) {
+    //   process.stdout.write(
+    //     `  ⏳ Waiting ${CONFIG.DELAY_BETWEEN_SYMBOLS_MS / 1000}s before next symbol...\r`
+    //   );
+    //   await sleep(CONFIG.DELAY_BETWEEN_SYMBOLS_MS);
+    //   process.stdout.write(" ".repeat(55) + "\r"); // clear the line
+    // }
 
     try {
       // 1. Fetch historical OHLCV data
@@ -74,7 +74,7 @@ async function main() {
         continue;
       }
 
-      const symbolRow = allStockList.find((s)=>s.symbolNS === symbol)
+      const symbolRow = SYMBOLS.result.find((s)=>s.symbolNS === symbol)
 
       await storeCandles(symbolRow,ohlcv)
       // 3. Entry signal found — fetch details and run full analysis

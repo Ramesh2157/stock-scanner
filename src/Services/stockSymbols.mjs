@@ -25,6 +25,9 @@ export async function getAllStockList() {
     symbol_name: s.symbol_name,
     symbolNS: `${s.symbol_name}.NS`
   }));
+  const symbolsNS = data.map(s => (
+    `${s.symbol_name}.NS`
+  ));
 
-  return result;
+  return {result, symbolsNS};
 }
