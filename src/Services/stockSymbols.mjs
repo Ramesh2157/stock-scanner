@@ -13,7 +13,7 @@ export async function getAllStockList() {
 
   const { data, error } = await supabase
     .from(tableName)
-    .select("id, symbol_name");
+    .select("id, symbol_name").range(0, 3000);
 
   if (error) {
     console.error("Supabase error:", error.message);

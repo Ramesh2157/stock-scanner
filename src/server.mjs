@@ -3,6 +3,9 @@ import axios from "axios";
 import { parse } from "csv-parse/sync";
 
 import { insertMany, insertOne } from "./insertModule.js";
+import YahooFinance from "yahoo-finance2";
+
+const yahooFinance = new YahooFinance();
 
 const app = express();
 const PORT = 3000;
@@ -45,7 +48,7 @@ app.get("/api/nifty500", async (req, res) => {
     const stocks = response.data?.data || [];
 
     const symbols = stocks.map((stock) => stock.symbol);
- const symbolsMany = [];
+    const symbolsMany = [];
    for (const stock of stocks) {
      try {
       symbolsMany.push({
@@ -125,11 +128,42 @@ app.get("/api/all-stocks", async (req, res) => {
     }));
     const symbols = stocks.map((stock) => stock.symbol + '.NS');
 
+
+//  const stocks = response.data?.data || [];
+
+//     const rows = stocks.map((stock) => stock.symbol);
+    const symbolsMany = [];
+   for (const symbol of symbols) {
+     try {
+      const summary = await yahooFinance.quoteSummary(symbol, {
+      modules: ['price', 'assetProfile'],
+    });
+      symbolsMany.push({
+          stock_name : summary.price.longName,
+          symbol_name : symbol.split('.NS')[0],
+          segment : summary.price.quoteType,
+          exchange_type : summary.price.exchangeName,
+          industry_sector : summary.assetProfile.sector
+      })
+       } catch (err) {
+       console.error(`  ✗ Error fetch ${symbol}: ${err.message}`);
+       
+     }
+   }
+
+   console.log(symbolsMany);
+   
+
+// const { error } = await supabase
+//     .from("candle_history")
+//     .upsert(rows, { onConflict: "symbol_id,date" });
     res.json({
       success: true,
-      count: stocks.length,
-      data: stocks,
-      symbols
+      // records
+      symbolsMany
+      // count: stocks.length,
+      // data: stocks,
+      // symbols
     });
   } catch (error) {
     res.status(500).json({

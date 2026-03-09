@@ -52,9 +52,12 @@ export const CONFIG = {
   DEBUG: false,
 
   TELEGRAM: {
-    TOKEN  : '',
-    CHAT_ID: '',
-    ENABLED: false,
+    TOKEN: "8755781460:AAEhI4v3bFkYZzMBoUxmUNPftU42X_SLJU4",         // ← paste your bot token
+    ETH_TOKEN:"8733022976:AAEcNEpL2npZJaNQmyHo_BaC3QlAYTy8I18",
+    BTC_TOKEN:"8739226478:AAHwxKhT_JPLGR_PZVUQm6UKNsoO8VwM7xU",
+    // CHAT_ID: "7934836805",         // ← paste your chat ID
+    CHAT_ID: "-5041964469",         // ← paste your group ID
+    ENABLED: true,
   },
 };
 
