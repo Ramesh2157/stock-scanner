@@ -44,6 +44,7 @@ async function main() {
   console.log("═".repeat(60) + "\n");
 
   const SYMBOLS = await getAllStockList()
+
   // ── Summary table for live signals (printed at end) ─────────
   const liveTable = [];
   let backTestData = [];

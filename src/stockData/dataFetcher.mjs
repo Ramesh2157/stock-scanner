@@ -20,8 +20,6 @@
 
 import YahooFinance from "yahoo-finance2";
 
-// const yahooFinance = new YahooFinance();
-// v3 breaking change: must instantiate before calling any method
 const yahooFinance = new YahooFinance();
 
 /**
