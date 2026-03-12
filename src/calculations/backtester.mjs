@@ -83,7 +83,7 @@ export function runBacktest(ohlcv, signals) {
       // Time-based exit (after TIME_EXIT_DAYS bars have elapsed)
       else if (barsHeld >= TIME_EXIT_DAYS) {
         exitPrice  = bar.close;
-        exitReason = `${TIME_EXIT_DAYS} after exit.`;
+        exitReason = `${TIME_EXIT_DAYS} day's after exit.`;
       }
 
       if (exitPrice !== null) {

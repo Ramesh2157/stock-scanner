@@ -15,18 +15,18 @@
 export const SYMBOLS ={
   symbolsNS:
  [
-  // 'RELIANCE.NS',
-  // 'TCS.NS',
-  // 'INFY.NS',
-  // 'HDFCBANK.NS',
-  // 'ICICIBANK.NS',
+  'RELIANCE.NS',
+  'TCS.NS',
+  'INFY.NS',
+  'HDFCBANK.NS',
+  'ICICIBANK.NS',
   'HINDALCO.NS',
-  // 'SHRIRAMFIN.NS',
-  // 'NAVINFLUOR.NS',
-  // 'JSWSTEEL.NS',
-  // 'LAURUSLABS.NS',
-  // 'INDUSTOWER.NS',
-  // 'VOLTAS.NS',
+  'SHRIRAMFIN.NS',
+  'NAVINFLUOR.NS',
+  'JSWSTEEL.NS',
+  'LAURUSLABS.NS',
+  'INDUSTOWER.NS',
+  'VOLTAS.NS',
 ]};
 
 export const CONFIG = {
