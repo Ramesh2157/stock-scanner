@@ -107,7 +107,7 @@ async function main() {
         entry_price :t.entryPrice.toFixed(2),
         exit_price: t.exitPrice.toFixed(2),
         return : (t.returnPct * 100).toFixed(2) + '%',
-        exit:t.exitReason
+        exit_reason:t.exitReason
       }));
 
       backTestData = [...backTestData,...backTestDataTrade]
@@ -136,7 +136,7 @@ async function main() {
     }
   }
 
-  // ── Final back test data table ─────────────────────────
+  // ── Final back test data table ─────────────────────────  
   if (backTestData.length > 0) {
     await storeBackTestData(backTestData)
   }
