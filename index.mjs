@@ -25,6 +25,7 @@ import { getAllStockList } from "./src/Services/stockSymbols.mjs";
 import { storeCandles } from "./src/Services/candleHistory.js";
 import { storeFilterStocks } from "./src/Services/filterStocks.js";
 import { storeBackTestData } from "./src/Services/backtestData.js";
+import { exitIfMarketClosed } from "./src/stockData/isMarketOpen.mjs";
 
 // const SYMBOLS_LIST = JSON.parse(fs.readFileSync("./assests/nifty500.json", "utf-8"));
 // const SYMBOLS_LIST = JSON.parse(fs.readFileSync("./assests/allstock.json", "utf-8"));
@@ -34,6 +35,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // ── Main orchestrator ─────────────────────────────────────────
 async function main() {
+   await exitIfMarketClosed(); 
+
   console.log("═".repeat(60));
   console.log("  QUANT BACKTESTING ENGINE — SMA-44 Strategy");
   console.log("═".repeat(60));
