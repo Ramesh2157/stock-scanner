@@ -210,14 +210,11 @@ async function main() {
 
 import cron from "node-cron";
 
-const CRON_SCHEDULE = process.env.CRON_SCHEDULE || '40 15 * * *';
-
-console.log("Using cron:", CRON_SCHEDULE);
-
-cron.schedule(CRON_SCHEDULE, () => {
-  console.log(`Running task at ${new Date().toISOString()}`);
+cron.schedule('10 10 * * *', () => {
+  console.log('Running task at 3:40 PM');
   main();
 });
+
 
 import express from 'express';
 
