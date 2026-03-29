@@ -210,9 +210,9 @@ async function main() {
 
 import cron from "node-cron";
 
-cron.schedule('10 10 * * *', () => {
+cron.schedule('10 10 * * *', async () => {
   console.log('Running task at 3:40 PM');
-  main();
+  await main();
 });
 
 
@@ -220,9 +220,9 @@ import express from 'express';
 
 const app = express();
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   res.send('App running');
-  main();
+ await main();
 });
 
 app.listen(3000, () => {
