@@ -222,6 +222,7 @@ const app = express();
 
 app.get('/', (req, res) => {
   res.send('App running');
+  main();
 });
 
 app.listen(3000, () => {
