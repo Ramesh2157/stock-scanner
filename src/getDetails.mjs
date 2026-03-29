@@ -27,8 +27,3 @@ export  async function getStockDetails(symbol) {
   }
 }
 
-// Example
-const symbol = "RELIANCE.NS"; // NSE format
-const data = await getStockDetails(symbol);
-
-console.log(data);
