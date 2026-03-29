@@ -210,11 +210,22 @@ async function main() {
 
 import cron from "node-cron";
 
-// cron.schedule('40 15 * * *', () => {
-cron.schedule('28 15 * * *', () => {
+cron.schedule('40 15 * * *', () => {
+// cron.schedule('28 15 * * *', () => {
   console.log('Running task at 3:40 PM');
   // your logic here
-  // main();
+  main();
 });
 
-main();
+
+import express from 'express';
+
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('App running');
+});
+
+app.listen(3000, () => {
+  console.log('Server started');
+});
