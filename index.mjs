@@ -35,7 +35,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // ── Main orchestrator ─────────────────────────────────────────
 async function main() {
-   await exitIfMarketClosed(); 
+   const isMarketOpen = await exitIfMarketClosed(); 
+   if(isMarketOpen === false){
+    return
+   }
 
   console.log("═".repeat(60));
   console.log("  QUANT BACKTESTING ENGINE — SMA-44 Strategy");
@@ -57,13 +60,13 @@ async function main() {
 
     // ── Polite gap between symbols to avoid 429 bursts ────────
     // Skip delay for the very first symbol
-    if (i > 0) {
-      process.stdout.write(
-        `  ⏳ Waiting ${CONFIG.DELAY_BETWEEN_SYMBOLS_MS / 1000}s before next symbol...\r`
-      );
-      await sleep(CONFIG.DELAY_BETWEEN_SYMBOLS_MS);
-      process.stdout.write(" ".repeat(55) + "\r"); // clear the line
-    }
+    // if (i > 0) {
+    //   process.stdout.write(
+    //     `  ⏳ Waiting ${CONFIG.DELAY_BETWEEN_SYMBOLS_MS / 1000}s before next symbol...\r`
+    //   );
+    //   await sleep(CONFIG.DELAY_BETWEEN_SYMBOLS_MS);
+    //   process.stdout.write(" ".repeat(55) + "\r"); // clear the line
+    // }
 
     try {
       // 1. Fetch historical OHLCV data
@@ -210,11 +213,30 @@ async function main() {
 
 import cron from "node-cron";
 
-cron.schedule('10 10 * * *', async () => {
+cron.schedule('40 15 * * *', async () => {
   console.log('Running task at 3:40 PM');
   await main();
 });
 
+// let isRunning = false;
+
+// cron.schedule('* * * * *', async () => {
+//   if (isRunning) {
+//     console.log('Skipping... previous job still running');
+//     return;
+//   }
+
+//   isRunning = true;
+
+//   try {
+//     console.log('Running every minute...');
+//     await main();
+//   } catch (err) {
+//     console.error(err);
+//   } finally {
+//     isRunning = false;
+//   }
+// });
 
 import express from 'express';
 

@@ -258,11 +258,12 @@ export async function exitIfMarketClosed() {
     console.log(`\n  🔴 Market closed — skipping job.`);
     console.log(`     Date   : ${date}`);
     console.log(`     Reason : ${reason}\n`);
-    process.exit(0);
+    return false
+  }else{
+      console.log(`  🟢 Market open — proceeding.`);
+      console.log(`     Date       : ${date}`);
+      console.log(`     NIFTY close: ${niftyClose != null ? '₹' + niftyClose : 'N/A'}`);
+      console.log(`     Reason     : ${reason}\n`);
+  return true
   }
-
-  console.log(`  🟢 Market open — proceeding.`);
-  console.log(`     Date       : ${date}`);
-  console.log(`     NIFTY close: ${niftyClose != null ? '₹' + niftyClose : 'N/A'}`);
-  console.log(`     Reason     : ${reason}\n`);
 }
