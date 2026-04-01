@@ -67,7 +67,7 @@ function createTelegramMessage(row) {
   return `
 ${row.status}
 
-📌 ${row.name} (${row.symbol})
+📌 ${row?.name} (${row.symbol})
 
 💰 Open: ${row.open ?? '-'}
 💰 Close: ${row.close ?? '-'}

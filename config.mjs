@@ -47,7 +47,7 @@ export const CONFIG = {
   INITIAL_CAPITAL: 1_000_000,
 
   // Rate-limit protection
-  DELAY_BETWEEN_SYMBOLS_MS: 3000,
+  DELAY_BETWEEN_SYMBOLS_MS: 1500,
 
   DEBUG: false,
 

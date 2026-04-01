@@ -60,13 +60,13 @@ async function main() {
 
     // ── Polite gap between symbols to avoid 429 bursts ────────
     // Skip delay for the very first symbol
-    // if (i > 0) {
-    //   process.stdout.write(
-    //     `  ⏳ Waiting ${CONFIG.DELAY_BETWEEN_SYMBOLS_MS / 1000}s before next symbol...\r`
-    //   );
-    //   await sleep(CONFIG.DELAY_BETWEEN_SYMBOLS_MS);
-    //   process.stdout.write(" ".repeat(55) + "\r"); // clear the line
-    // }
+    if (i > 0) {
+      process.stdout.write(
+        `  ⏳ Waiting ${CONFIG.DELAY_BETWEEN_SYMBOLS_MS / 1000}s before next symbol...\r`
+      );
+      await sleep(CONFIG.DELAY_BETWEEN_SYMBOLS_MS);
+      process.stdout.write(" ".repeat(55) + "\r"); // clear the line
+    }
 
     try {
       // 1. Fetch historical OHLCV data
@@ -126,7 +126,7 @@ async function main() {
       liveTable.push({
         symbolRow,
         symbol,
-        name          : details.name,
+        name          : details?.name,
         trade         : liveSignal.trade,
         status        : liveSignal.status,
         sma44         : liveSignal.latest?.sma44,
@@ -175,7 +175,7 @@ async function main() {
 
       console.log(
         "  " +
-          row.name?.padEnd(16) +
+          row?.name?.padEnd(16) +
           "  " +
           row.symbol?.padEnd(16) +
           badge.padEnd(18) +
@@ -185,7 +185,7 @@ async function main() {
       );
 
       const stock = {
-        name          : row.name,
+        name          : row?.name,
         symbol        : row.symbol,
         symbol_id     : row.symbolRow.id,
         status        : badge,
@@ -213,7 +213,7 @@ async function main() {
 
 import cron from "node-cron";
 
-cron.schedule('40 15 * * *', async () => {
+cron.schedule('10 10 * * *', async () => {
   console.log('Running task at 3:40 PM');
   await main();
 });
