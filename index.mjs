@@ -244,7 +244,11 @@ const app = express();
 
 app.get('/', async (req, res) => {
   res.send('App running');
- await main();
+});
+
+app.get('/filter', async (req, res) => {
+  res.send('App running');
+  await main();
 });
 
 app.listen(3000, () => {
