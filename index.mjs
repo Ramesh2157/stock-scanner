@@ -35,10 +35,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // ── Main orchestrator ─────────────────────────────────────────
 async function main() {
-   const isMarketOpen = await exitIfMarketClosed(); 
-   if(isMarketOpen === false){
-    return
-   }
+  //  const isMarketOpen = await exitIfMarketClosed(); 
+  //  if(isMarketOpen === false){
+  //   return
+  //  }
 
   console.log("═".repeat(60));
   console.log("  QUANT BACKTESTING ENGINE — SMA-44 Strategy");
@@ -60,13 +60,13 @@ async function main() {
 
     // ── Polite gap between symbols to avoid 429 bursts ────────
     // Skip delay for the very first symbol
-    if (i > 0) {
-      process.stdout.write(
-        `  ⏳ Waiting ${CONFIG.DELAY_BETWEEN_SYMBOLS_MS / 1000}s before next symbol...\r`
-      );
-      await sleep(CONFIG.DELAY_BETWEEN_SYMBOLS_MS);
-      process.stdout.write(" ".repeat(55) + "\r"); // clear the line
-    }
+    // if (i > 0) {
+    //   process.stdout.write(
+    //     `  ⏳ Waiting ${CONFIG.DELAY_BETWEEN_SYMBOLS_MS / 1000}s before next symbol...\r`
+    //   );
+    //   await sleep(CONFIG.DELAY_BETWEEN_SYMBOLS_MS);
+    //   process.stdout.write(" ".repeat(55) + "\r"); // clear the line
+    // }
 
     try {
       // 1. Fetch historical OHLCV data
@@ -248,8 +248,8 @@ app.get('/', async (req, res) => {
 
 app.get('/filter', async (req, res) => {
   res.send('App running');
-  await main();
 });
+await main();
 
 app.listen(3000, () => {
   console.log('Server started');
