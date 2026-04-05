@@ -49,7 +49,7 @@ while (true) {
   }));
   const symbolsNS = allData.map(s => (
     `${s.symbol_name}.NS`
-  ));
+  )).slice(0,500);
 
   return {result, symbolsNS};
 }
